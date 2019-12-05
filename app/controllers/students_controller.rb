@@ -1,3 +1,4 @@
+
 class StudentsController < ApplicationController
   before_action :set_student, only: :show
   
@@ -13,6 +14,8 @@ class StudentsController < ApplicationController
 
   def create
     session[:form_params] = params.inspect
+    student[first_name]
+    student[last_name]
     redirect_to new_student_path
   end
 
